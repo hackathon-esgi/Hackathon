@@ -33,6 +33,17 @@ class KeyWord
      */
     private $nbArticle;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\SubCategory", inversedBy="keyWords")
+     */
+    private $subCategories;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="keyWords")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $categories;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +81,30 @@ class KeyWord
     public function setNbArticle(int $nbArticle): self
     {
         $this->nbArticle = $nbArticle;
+
+        return $this;
+    }
+
+    public function getSubCategories(): ?SubCategory
+    {
+        return $this->subCategories;
+    }
+
+    public function setSubCategories(?SubCategory $subCategories): self
+    {
+        $this->subCategories = $subCategories;
+
+        return $this;
+    }
+
+    public function getCategories(): ?Category
+    {
+        return $this->categories;
+    }
+
+    public function setCategories(?Category $categories): self
+    {
+        $this->categories = $categories;
 
         return $this;
     }
