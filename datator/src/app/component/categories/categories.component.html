@@ -1,0 +1,81 @@
+<div class="content">
+  <!--<footer class="footer box">
+    Footer
+  </footer>
+   
+ <aside class="sidebar box">
+    Sidebar
+  </aside>-->
+    
+  <header class="logo box">
+    Logo
+  </header>
+
+  <nav class="menu box">
+    Menu
+  </nav>
+
+
+  <nav class="recherchecle box">
+    Menusd
+  </nav>
+
+
+   
+  <div class="breadcrumb box">
+    Fil d'Ariane
+  </div>
+
+   <nav class="periode box">
+    période
+  </nav>
+ 
+  <main class="main categorie">
+    <article class="box">
+
+      <h2>My Heroes</h2>
+<ul class="motcles">
+  <li *ngFor="let motcle of motcles"
+    [class.selected]="motcle === selectedMotcle"
+    (click)="onSelect(motcle)">
+    <span class="badge">{{motcle.id}}</span> {{motcle.name}}
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+    </article>
+    <article class="box">
+      <div *ngIf="selectedMotcle">
+      <div>
+        <label>name:
+          <input [(ngModel)]="selectedMotcle.name" placeholder="name"/>
+        </label>
+      </div>
+
+    </div>
+    </article>
+    <article class="box">
+      Article 1
+    </article>
+    <article class="box">
+      Article 2
+    </article>
+    <article class="box">
+      Article 1
+    </article>
+  </main>
+	<aside class="sidebar box">
+    Sidebar
+  </aside>
+
+  <nav class="save box">
+    save
+  </nav>
+
+</div>
