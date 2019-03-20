@@ -45,9 +45,15 @@ class Category
      */
     private $subCategories;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\KeyWord", mappedBy="categories")
+     */
+    private $keyWords;
+
     public function __construct()
     {
         $this->subCategories = new ArrayCollection();
+        $this->keyWords = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -128,6 +134,37 @@ class Category
             // set the owning side to null (unless already changed)
             if ($subCategory->getCategory() === $this) {
                 $subCategory->setCategory(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|KeyWord[]
+     */
+    public function getKeyWords(): Collection
+    {
+        return $this->keyWords;
+    }
+
+    public function addKeyWord(KeyWord $keyWord): self
+    {
+        if (!$this->keyWords->contains($keyWord)) {
+            $this->keyWords[] = $keyWord;
+            $keyWord->setCategories($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKeyWord(KeyWord $keyWord): self
+    {
+        if ($this->keyWords->contains($keyWord)) {
+            $this->keyWords->removeElement($keyWord);
+            // set the owning side to null (unless already changed)
+            if ($keyWord->getCategories() === $this) {
+                $keyWord->setCategories(null);
             }
         }
 

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -38,6 +40,16 @@ class SubCategory
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\KeyWord", mappedBy="subCategories")
+     */
+    private $keyWords;
+
+    public function __construct()
+    {
+        $this->keyWords = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -88,6 +100,37 @@ class SubCategory
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|KeyWord[]
+     */
+    public function getKeyWords(): Collection
+    {
+        return $this->keyWords;
+    }
+
+    public function addKeyWord(KeyWord $keyWord): self
+    {
+        if (!$this->keyWords->contains($keyWord)) {
+            $this->keyWords[] = $keyWord;
+            $keyWord->setSubCategories($this);
+        }
+
+        return $this;
+    }
+
+    public function removeKeyWord(KeyWord $keyWord): self
+    {
+        if ($this->keyWords->contains($keyWord)) {
+            $this->keyWords->removeElement($keyWord);
+            // set the owning side to null (unless already changed)
+            if ($keyWord->getSubCategories() === $this) {
+                $keyWord->setSubCategories(null);
+            }
+        }
 
         return $this;
     }
