@@ -1,30 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Motcle } from '../../entity/motcle';
 import { MotcleService } from '../../service/motcle.service';
+import { CATEGORIES } from '../../mock/mock-categorie';
+import { Categorie } from '../../entity/categorie';
+import { SousCategorie } from '../../entity/sousCategories';
 @Component({
   selector: 'app-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.css']
 })
+
 export class CategoriesComponent implements OnInit {
 
-  selectedMotcle: Motcle;
-  motcles: Motcle[];
-
-  constructor(private motcleService: MotcleService) { }
+  categories = CATEGORIES;
+  constructor() { }
 
   ngOnInit() {
-  this.getMotcles();
   }
 
-  onSelect(motcle: Motcle): void {
-    this.selectedMotcle = motcle;
-  }
-
-  getMotcles(): void {
-    this.motcleService.getMotcles()
-        .subscribe(motcles => this.motcles = motcles);
-        console.log(this.motcles);
+  onSelect(id: number, sousCategorie: SousCategorie): void {
+    console.log(sousCategorie)
+    console.log(id)
   }
 
 }

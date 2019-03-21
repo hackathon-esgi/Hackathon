@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccueilComponent } from './component/accueil/accueil.component';
 import { CategoriesComponent } from './component/categories/categories.component';
-import { ChoixCategoriesComponent } from './component/choix-categories/choix-categories.component';
+import { AboutComponent } from './component/about/about.component';
+import { ContactComponent } from './component/contact/contact.component';
+import { PriceComponent } from './component/price/price.component';
+
 
 
 const routes: Routes = [
+  { path: '', component: AccueilComponent },
   { path: 'categories', component: CategoriesComponent },
-  { path: 'choix', component: ChoixCategoriesComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'price', component: PriceComponent }
 ];
 
 

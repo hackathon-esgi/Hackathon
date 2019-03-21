@@ -1,4 +1,5 @@
-export class Motcle {
+
+export class SousCategorie {
   id: number;
   name: string;
   score:number;
