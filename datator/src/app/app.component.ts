@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
 
 	motcles : [];
   constructor(private testHttpService: TestHttpService) { 
-  this.getMotcles();
+  //this.getMotcles();
   }
 
   ngOnInit() {
@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
 
   getMotcles(): void {
   	let t;
-    this.testHttpService.getdata()
+    /*this.testHttpService.getdata()
         .subscribe(motcles => t = motcles);
-        console.log(t);
+        console.log(t);*/
   }
 }

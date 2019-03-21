@@ -13,6 +13,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { HttpClientModule }    from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component';
+import { ChoixCategorieComponent } from './component/choix-categorie/choix-categorie.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component'
     ContactComponent,
     FooterComponent,
     HeaderComponent,
-    ChoixPaysComponent
+    ChoixPaysComponent,
+    ChoixCategorieComponent
   ],
   imports: [
     BrowserModule,
