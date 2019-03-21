@@ -1,0 +1,10 @@
+<nav class="columns">
+    <a *ngFor="let categorie of listCategorie" class="bd-focus-item column has-text-centered {{categorie.color}}" >
+      <p class="title is-4">
+        <strong>{{categorie.name}}</strong>
+      </p>
+
+       <img src="{{categorie.url}}" style="visibility: hidden;" />
+  
+    </a>
+ </nav>
