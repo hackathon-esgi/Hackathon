@@ -11,6 +11,7 @@ import { ContactComponent } from './component/contact/contact.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { ChoixCategorieComponent } from './component/choix-categorie/choix-categorie.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule }    from '@angular/common/http';
     PriceComponent,
     ContactComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ChoixCategorieComponent
   ],
   imports: [
     BrowserModule,

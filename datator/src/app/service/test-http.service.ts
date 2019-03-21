@@ -18,15 +18,10 @@ export class TestHttpService {
 
 
 getdata (){
-	
-    /*let toto = this.http.get('https://api.ozae.com/gnw/articles?date=20190317__20190317&edition=fr-fr&key=11116dbf000000000000960d2228e999&hard_limit=50&topic=s')
-      .pipe(
-        tap(_ => this.log('fetched kjj')),
-        catchError(this.handleError<any>('getHeroes', []))
-      );*/
-      let toto=this.http
-            .get('https://api.ozae.com/gnw/articles?date=20190317__20190317&edition=fr-fr&key=11116dbf000000000000960d2228e999&hard_limit=50&topic=s');
-     // console.log(toto);
+      let toto = this.http
+            .get('https://api.ozae.com/gnw/articles?date=20190317__20190317&edition=fr-fr&key=11116dbf000000000000960d2228e999&hard_limit=50&topic=s').subscribe(data => {
+      console.log(data);
+    });
       return toto;
   }
 
