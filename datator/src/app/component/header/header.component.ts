@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
 
     Menu= [
 	  	{ url:'/' , name :'Accueil' },
-	 	{ url:'/about' , name :'Qui sommes nous?' },
+	 	{ url:'/about' , name :'Qui sommes nous ?' },
 	  	{ url:'/price' , name :'Prix' },
 	 	{ url:'/contact' , name :'Contact' },
 	 	{ url: '/categories', name:'categorie'}

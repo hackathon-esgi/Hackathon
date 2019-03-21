@@ -5,6 +5,7 @@ import { CategoriesComponent } from './component/categories/categories.component
 import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { PriceComponent } from './component/price/price.component';
+import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component';
 
 
 
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'categories', component: CategoriesComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'price', component: PriceComponent }
+  { path: 'price', component: PriceComponent },
+  { path: 'choix-pays', component: ChoixPaysComponent }
 ];
 
 
