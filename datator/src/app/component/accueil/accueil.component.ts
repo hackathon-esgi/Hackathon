@@ -10,16 +10,18 @@ export class AccueilComponent implements OnInit {
   constructor() { }
 
    bookList = [
-        { id: 11, name: 'Macron', color: 'img' },
-	 	{ id: 12, name: 'Macrondd', color: 'img'  },
-	  	{ id: 13, name: 'Macronvv', color: 'img'  },
-	 	{ id: 12, name: 'Macrondd', color: 'blue'  },
-	  	{ id: 13, name: 'Macronvv', color: 'blue'  },
-	  	{ id: 11, name: 'Macrsdqsdfon', color: 'blue' },
-	 	{ id: 12, name: 'Macsqdrondd', color: 'blue'  },
-	  	{ id: 13, name: 'Macronvv', color: 'blue'  },
-	 	{ id: 12, name: 'Macrondd', color: 'blue'  },
-	  	{ id: 13, name: 'Macronvv', color: 'blue'  }
+        { id: 11, name: 'Manifestations Paris', color: 'greyBold' },
+	 	{ id: 12, name: 'Jeux Olympiques', color: 'greyBold'  },
+	  	{ id: 13, name: 'Belgique', color: 'grey'  },
+	 	{ id: 12, name: 'Etats-Unis', color: 'grey'  },
+	  	{ id: 13, name: 'Adoptions chiens', color: 'greyBold'  },
+	  	{ id: 11, name: 'Recherche par mot clés', color: 'rose' },
+	 	{ id: 12, name: 'Italie', color: 'grey'  },
+	  	{ id: 13, name: 'Belgique', color: 'grey'  },
+	 	{ id: 12, name: 'Gilets jaunes', color: 'greyBold'  },
+	 	{ id: 12, name: 'Design', color: 'greyBold'  },
+	  	{ id: 13, name: 'Recherche par pays', color: 'green'  },
+	  	{ id: 12, name: 'Trump', color: 'grey'  }
     ];
 
   ngOnInit() {
