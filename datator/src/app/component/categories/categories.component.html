@@ -1,81 +1,48 @@
-<div class="content">
-  <!--<footer class="footer box">
-    Footer
-  </footer>
-   
- <aside class="sidebar box">
-    Sidebar
-  </aside>-->
-    
-  <header class="logo box">
-    Logo
-  </header>
+<main class="bd-main">
+    <div class="bd-breadcrumb">
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+            <li>
+              <a href="">Home</a>
+            </li>          
+        </ul>
+      </nav>
+    </div>
+     <div class="bd-main-container container">
+        <div class="bd-duo">
+          
 
-  <nav class="menu box">
-    Menu
-  </nav>
+            <aside class="bd-side">
+                <nav id="categories" class="bd-categories">
+                    <div *ngFor="let categorie of categories" class="bd-category ">
 
+                        <header class="bd-category-header">
+                            <a class="bd-category-toggle">
+                                <span class="icon">
+                                </span>
+                            </a>
+                            <a class="bd-category-name " href="{{categorie.name}}">
+                              <strong>{{categorie.name}}</strong>
+                            </a>
+                        </header>
 
-  <nav class="recherchecle box">
-    Menusd
-  </nav>
+                        <ul class="bd-category-list">
+                            <li *ngFor="let souscategorie of categorie.sousCategories" 
+                             (click)="onSelect(categorie.id, souscategorie)" >
+                                <a>
+                                    {{souscategorie.name}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
 
+            <div class="bd-lead">
+              mlkmlkmlk
+            </div>
 
-   
-  <div class="breadcrumb box">
-    Fil d'Ariane
-  </div>
-
-   <nav class="periode box">
-    période
-  </nav>
- 
-  <main class="main categorie">
-    <article class="box">
-
-      <h2>My Heroes</h2>
-<ul class="motcles">
-  <li *ngFor="let motcle of motcles"
-    [class.selected]="motcle === selectedMotcle"
-    (click)="onSelect(motcle)">
-    <span class="badge">{{motcle.id}}</span> {{motcle.name}}
-  </li>
-</ul>
-
-
-
-
-
-
-
-
-    </article>
-    <article class="box">
-      <div *ngIf="selectedMotcle">
-      <div>
-        <label>name:
-          <input [(ngModel)]="selectedMotcle.name" placeholder="name"/>
-        </label>
-      </div>
+        </div>
 
     </div>
-    </article>
-    <article class="box">
-      Article 1
-    </article>
-    <article class="box">
-      Article 2
-    </article>
-    <article class="box">
-      Article 1
-    </article>
-  </main>
-	<aside class="sidebar box">
-    Sidebar
-  </aside>
-
-  <nav class="save box">
-    save
-  </nav>
-
-</div>
+</main>

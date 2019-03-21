@@ -1,35 +1,7 @@
-<div class="content">
-  <!--<footer class="footer box">
-    Footer
-  </footer>
-   
- <aside class="sidebar box">
-    Sidebar
-  </aside>-->
- 
-  <nav class="menu box">
-    Menu
-  </nav>
-   
-  <header class="logo box">
-    Logo
-  </header>
-
-  <nav class="recherche box">
-    Menu recherhche
-  </nav>
-
-  <main class="main">
-    <article class="box">
-      Article 1
-    </article>
-    <article class="box">
-      Article 2
-    </article>
-  </main>
-
-   
-<!--  <div class="breadcrumb box">
-    Fil d'Ariane
-  </div>-->
+<div class="columns is-gapless is-multiline is-mobile has-text-centered">
+  <div *ngFor="let book of bookList" class="column is-3  ">
+        <div class="notification {{book.color}}">
+            <p class="title">{{book.name}}</p>
+        </div>
+    </div>
 </div>
