@@ -8,13 +8,58 @@
 
 html{
   height:100%;
-  background-color: black;
+  /*background-color: black;*/
+  background-image: url("assets/image/Texture_finale.png");
 }
 
 body
 {
-  background-color: black;
+  /*background-color: black;*/
   min-height: 100%
+}
+
+div.greyBold {
+  width: 426px;
+  height: 72px;
+  border-radius: 36px;
+  background-color: #737373;
+  color: white;
+  margin-bottom: 5%;
+  margin-right: 3%;
+
+}
+
+div.grey {
+  width: 426px;
+  height: 72px;
+  border-radius: 36px;
+  background-color: #bababa;
+  color: white;
+  margin-bottom: 5%;
+  margin-right: 3%;
+
+}
+
+div.rose {
+  width: 426px;
+  height: 72px;
+  border-radius: 36px;
+  background-color: #DF7373;
+  color: white;
+  margin-bottom: 5%;
+  margin-right: 3%;
+
+}
+
+div.green {
+  width: 426px;
+  height: 72px;
+  border-radius: 36px;
+  background-color: #64B6AC;
+  color: white;
+  margin-bottom: 5%;
+  margin-right: 3%;
+
 }
 
 .navbar-item img {
