@@ -11,6 +11,8 @@ import { ContactComponent } from './component/contact/contact.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { HttpClientModule }    from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component';
 import { ChoixCategorieComponent } from './component/choix-categorie/choix-categorie.component';
 import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component';
 
@@ -32,7 +34,8 @@ import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component'
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   bootstrap: [AppComponent]
 })

@@ -6,6 +6,7 @@ import { CategoriesComponent } from './component/categories/categories.component
 import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { PriceComponent } from './component/price/price.component';
+import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component';
 import { ChoixCategorieComponent} from './component/choix-categorie/choix-categorie.component';
 import {ChoixPaysComponent} from './component/choix-pays/choix-pays.component';
 
@@ -17,8 +18,8 @@ const routes: Routes = [
   { path: 'price', component: PriceComponent },
   { path: 'choix', component: ChoixCategorieComponent },
   { path: 'choixpays', component: ChoixPaysComponent }
-
   ];
+
 
 
 @NgModule({

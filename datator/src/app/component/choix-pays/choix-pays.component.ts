@@ -12,18 +12,19 @@ export class ChoixPaysComponent implements OnInit {
  ListPays = [
         { id: 11, name: 'Etats-Unis', color: 'grey' },
         { id: 14, name: 'Belgique', color: 'green' }
-    ];
+];
 
   ListPays2 = [
         { id: 12, name: 'France', color: 'green' },
         { id: 13, name: 'Allemagne', color: 'grey' }
     ];
 
+
   ListPays3 = [
         { id: 15, name: 'Italie', color: 'green' },
         { id: 16, name: 'Espagne', color: 'grey' }
     ];
-  
+
   ngOnInit() {
   }
 
