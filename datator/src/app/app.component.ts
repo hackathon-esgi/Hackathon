@@ -35,6 +35,30 @@ export class AppComponent implements OnInit {
 
   private setCategorie()
   {
+      let foot = JSON.parse(sessionStorage.getItem("FootBall"));
+      let i = 0;
+      let sommes = 0;
+      let indiceConfiance= 0;
+      for (let value of foot) {
+          sommes+= value.nbArticle;
+          indiceConfiance+=value.socialScore;
+          i++;
+      }
+      this.categories[1].nbArticle = sommes;
+      this.categories[1].indiceConfiance = indiceConfiance/i;
+      let eco =  JSON.parse(sessionStorage.getItem("Eco"));
+       i = 0;
+      sommes = 0;
+      indiceConfiance= 0;
+      for (let value of eco) {
+          sommes+= value.nbArticle;
+          indiceConfiance+=value.socialScore;
+          i++;
+      }
+      this.categories[0].nbArticle = sommes;
+      this.categories[0].indiceConfiance = indiceConfiance/i;
+
+
     this.categories[1].sousCategories[0].motcles = JSON.parse(sessionStorage.getItem("FootBall"));
     this.categories[0].sousCategories[1].motcles = JSON.parse(sessionStorage.getItem("Eco"));
      sessionStorage.setItem("categories",JSON.stringify( this.categories));

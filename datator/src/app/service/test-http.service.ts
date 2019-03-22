@@ -27,8 +27,6 @@ getdata (){
           .then(
               res => { 
                 let i = 0;
-                let sommes = 0;
-                let indiceConfiance= 0;
                 for (let value of res["ngrams"]) {
                   i++;
                   this.mot ={
