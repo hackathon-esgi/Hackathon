@@ -16,10 +16,15 @@ import { Node, Link } from '../../d3/d3';
 export class CategoriesComponent implements OnInit {
 
   categories = CATEGORIES;
-  selectedCat : SousCategorie;
+  selectedCat : SousCategorie[];
   All = true;
   listMotCle : Motcle[];
   constructor() {
+
+    if(sessionStorage.getItem("categories"))
+    {
+       this.categories = JSON.parse(sessionStorage.getItem("categories"));
+    }
     
   }
 
@@ -27,6 +32,7 @@ export class CategoriesComponent implements OnInit {
   }
 
   onSelect(sousCategorie: SousCategorie[]): void {
+    console.log(sousCategorie);
     this.selectedCat = sousCategorie;
     this.All = null;
     this.listMotCle= null;

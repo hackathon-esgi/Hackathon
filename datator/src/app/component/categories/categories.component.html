@@ -53,7 +53,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let motcle of listMotCle">
-                            <th>1</th>
+                            <th>{{motcle.id}}</th>
                             <td><strong>{{motcle.name}}</strong></td>
                             <th>{{motcle.nbArticle}}</th>
                             <td>{{motcle.score}}</td>
@@ -73,7 +73,7 @@
                     </thead>
                     <tbody>
                          <tr *ngFor="let souscat of selectedCat">
-                            <th>1</th>
+                            <th>{{souscat.id}}</th>
                             <td><strong>{{souscat.name}}</strong></td>
                             <th>{{souscat.nbArticle}}</th>
                             <td>{{souscat.score}}</td>

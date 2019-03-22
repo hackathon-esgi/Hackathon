@@ -1,24 +1,24 @@
 import { Categorie } from '../entity/categorie';
-import {SOUSCATEGORIE} from './mock-souscategorie';
+import {SOUSCATEGORIEECONOMIE,SOUSCATEGORIESPORT } from './mock-souscategorie';
 import {MOTCLES} from './mock-motcles';
 
 export const CATEGORIES : Categorie[] = [
     { 
-        id: 11, 
-        name: 'Macron', 
-        indiceConfiance :10,
-        nbArticle:10,
-        topic:"toto" ,
-        sousCategories :SOUSCATEGORIE,
+        id: 1, 
+        name: 'Economie ', 
+        indiceConfiance :0,
+        nbArticle:0,
+        topic:"b" ,
+        sousCategories :SOUSCATEGORIEECONOMIE,
         motcles : MOTCLES
     },
      { 
-        id: 11, 
-        name: 'sddd', 
-        indiceConfiance :10,
-        nbArticle:10,
-        topic:"toto" ,
-        sousCategories :SOUSCATEGORIE,
+        id: 2, 
+        name: 'Sports ', 
+        indiceConfiance :0,
+        nbArticle:0,
+        topic:"s" ,
+        sousCategories :SOUSCATEGORIESPORT,
         motcles :MOTCLES
     }
  ];
