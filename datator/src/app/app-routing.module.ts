@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NgDatepickerModule } from 'ng2-datepicker';
 import { AccueilComponent } from './component/accueil/accueil.component';
 import { CategoriesComponent } from './component/categories/categories.component';
 import { AboutComponent } from './component/about/about.component';
@@ -16,12 +17,15 @@ const routes: Routes = [
   { path: 'price', component: PriceComponent },
   { path: 'choix', component: ChoixCategorieComponent },
   { path: 'choixpays', component: ChoixPaysComponent }
-];
+
+  ];
 
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [ RouterModule.forRoot(routes),
+  			 NgDatepickerModule ],
+  exports: [ RouterModule,
+  			NgDatepickerModule ]
 })
 
 export class AppRoutingModule {}

@@ -12,10 +12,6 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { ChoixCategorieComponent } from './component/choix-categorie/choix-categorie.component';
-import { D3Service, D3_DIRECTIVES } from './d3/d3';
-
-import { GraphComponent } from './d3/visuals/graph/graph.component';
-import { SHARED_VISUALS } from './d3/visuals/shared';
 import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component';
 
 
@@ -30,9 +26,6 @@ import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component'
     FooterComponent,
     HeaderComponent,
     ChoixCategorieComponent,
-    GraphComponent,
-    SHARED_VISUALS,
-    D3_DIRECTIVES,
     ChoixPaysComponent
   ],
   imports: [
@@ -41,7 +34,6 @@ import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component'
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

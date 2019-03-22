@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {MessageService} from './message.service'
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Motcle } from '../entity/motcle';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class TestHttpService {
   constructor(
   private http: HttpClient,
   private messageService: MessageService) { }
-
+motcle :Motcle[]=[];
+mot :Motcle;
 
 getdata (){
     let promise = new Promise((resolve, reject) => {
@@ -23,18 +25,20 @@ getdata (){
       this.http.get(apiURL)
           .toPromise()
           .then(
-              res => { // Success
-                /*this.results = res.json().results.map(item => {
-                  return new SearchItem(
-                      item.trackName,
-                      item.artistName,
-                      item.trackViewUrl,
-                      item.artworkUrl30,
-                      item.artistId
-                  );
-                });*/
-                console.log(res);
-                 //this.results = res;
+              res => { 
+                let i = 0;
+                for (let value of res["ngrams"]) {
+                  i++;
+                  this.mot ={
+                        id: i,
+                          name: value.ngram,
+                          score: value.sum_confidence,
+                          nbArticle: value.count_articles,
+                          socialScore: value.social_score_sum
+                      };
+                  this.motcle.push(this.mot);
+                }
+                 sessionStorage.setItem("FootBall",JSON.stringify( this.motcle));
                 resolve();
               },
               msg => { // Error
@@ -42,19 +46,44 @@ getdata (){
               }
           );
     });
-    console.log(promise);
     return promise;
+  }
 
 
 
-   /*   let toto = this.http
-            .get('https://api.ozae.com/gnw/ngrams?topic=s&query=Tennis&hours=48&limit=20&key=11116dbf000000000000960d2228e999').subscribe(data => {
-      console.log(data);
-      toto = data;
+  getecodata (){
+    let promise = new Promise((resolve, reject) => {
+      let apiURL = 'https://api.ozae.com/gnw/ngrams?topic=b&query=Emplois&hours=48&limit=20&key=11116dbf000000000000960d2228e999';
+      this.http.get(apiURL)
+          .toPromise()
+          .then(
+              res => { 
+                let i = 0;
+                let sommes = 0;
+                let indiceConfiance= 0;
+                for (let value of res["ngrams"]) {
+                  i++;
+                  this.mot ={
+                        id: i,
+                          name: value.ngram,
+                          score: value.sum_confidence,
+                          nbArticle: value.count_articles,
+                          socialScore: value.social_score_sum
+                      };
+                  this.motcle.push(this.mot);
+                }
+                 sessionStorage.setItem("Eco",JSON.stringify( this.motcle));
+                resolve();
+              },
+              msg => { // Error
+                reject(msg);
+              }
+          );
     });
-            console.log(toto);
-      return toto;
-*/  }
+    return promise;
+  }
+
+
 
    /**
    * Handle Http operation that failed.

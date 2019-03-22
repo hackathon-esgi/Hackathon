@@ -17,7 +17,7 @@ export class AccueilComponent implements OnInit {
 	  	{ id: 13, name: 'Adoptions chiens', color: 'greyBold'  },
 	  	{ id: 11, name: 'Recherche par mot clés', color: 'rose' },
 	 	{ id: 12, name: 'Italie', color: 'grey'  },
-	  	{ id: 13, name: 'Belgique', color: 'grey'  },
+	  	{ id: 13, name: 'Environnement', color: 'grey'  },
 	 	{ id: 12, name: 'Gilets jaunes', color: 'greyBold'  },
 	 	{ id: 12, name: 'Design', color: 'greyBold'  },
 	  	{ id: 13, name: 'Recherche par pays', color: 'green'  },

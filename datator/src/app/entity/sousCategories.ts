@@ -1,3 +1,4 @@
+import {Motcle} from './motcle';
 
 export class SousCategorie {
   id: number;
