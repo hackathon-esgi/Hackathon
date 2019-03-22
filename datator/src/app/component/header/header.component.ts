@@ -8,11 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
     Menu= [
-	  	{ url:'/' , name :'Accueil' },
-	 	{ url:'/about' , name :'Qui sommes nous?' },
-	  	{ url:'/price' , name :'Prix' },
-	 	{ url:'/contact' , name :'Contact' },
-	 	{ url: '/categories', name:'categorie'}
+  	  	{ url:'/' , name :'Accueil' },
+    	 	{ url:'/about' , name :'Qui sommes nous?' },
+    	  { url:'/price' , name :'Prix' },
+    	 	{ url:'/contact' , name :'Contact' }
 	  ];
 
   constructor() { }

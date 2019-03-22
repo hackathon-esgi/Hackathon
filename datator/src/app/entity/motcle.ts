@@ -3,4 +3,5 @@ export class Motcle {
   name: string;
   score:number;
   nbArticle: number;
+  socialScore: number;
 }

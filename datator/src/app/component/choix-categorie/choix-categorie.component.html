@@ -1,9 +1,5 @@
 <nav class="columns">
-    <a *ngFor="let categorie of listCategorie" class="bd-focus-item column has-text-centered {{categorie.color}}" >
-      <p class="title is-4">
-        <strong>{{categorie.name}}</strong>
-      </p>
-
+    <a *ngFor="let categorie of listCategorie" class="bd-focus-item column has-text-centered {{categorie.color}}" style="margin-right: 1%;" >
        <img src="{{categorie.url}}" style="visibility: hidden;" />
   
     </a>

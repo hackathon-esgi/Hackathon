@@ -1,5 +1,6 @@
 import { Categorie } from '../entity/categorie';
-import {SOUSCATEGORIE} from './mock-souscategorie'
+import {SOUSCATEGORIE} from './mock-souscategorie';
+import {MOTCLES} from './mock-motcles';
 
 export const CATEGORIES : Categorie[] = [
     { 
@@ -8,6 +9,16 @@ export const CATEGORIES : Categorie[] = [
         indiceConfiance :10,
         nbArticle:10,
         topic:"toto" ,
-        sousCategories :SOUSCATEGORIE
+        sousCategories :SOUSCATEGORIE,
+        motcles : MOTCLES
+    },
+     { 
+        id: 11, 
+        name: 'sddd', 
+        indiceConfiance :10,
+        nbArticle:10,
+        topic:"toto" ,
+        sousCategories :SOUSCATEGORIE,
+        motcles :MOTCLES
     }
  ];

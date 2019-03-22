@@ -4,4 +4,5 @@ export class SousCategorie {
   name: string;
   score:number;
   nbArticle: number;
+  motcles : Motcle[];
 }

@@ -18,12 +18,43 @@ export class TestHttpService {
 
 
 getdata (){
-      let toto = this.http
-            .get('https://api.ozae.com/gnw/articles?date=20190317__20190317&edition=fr-fr&key=11116dbf000000000000960d2228e999&hard_limit=50&topic=s').subscribe(data => {
-      console.log(data);
+    let promise = new Promise((resolve, reject) => {
+      let apiURL = 'https://api.ozae.com/gnw/ngrams?topic=s&query=FootBall&hours=48&limit=20&key=11116dbf000000000000960d2228e999';
+      this.http.get(apiURL)
+          .toPromise()
+          .then(
+              res => { // Success
+                /*this.results = res.json().results.map(item => {
+                  return new SearchItem(
+                      item.trackName,
+                      item.artistName,
+                      item.trackViewUrl,
+                      item.artworkUrl30,
+                      item.artistId
+                  );
+                });*/
+                console.log(res);
+                 //this.results = res;
+                resolve();
+              },
+              msg => { // Error
+                reject(msg);
+              }
+          );
     });
+    console.log(promise);
+    return promise;
+
+
+
+   /*   let toto = this.http
+            .get('https://api.ozae.com/gnw/ngrams?topic=s&query=Tennis&hours=48&limit=20&key=11116dbf000000000000960d2228e999').subscribe(data => {
+      console.log(data);
+      toto = data;
+    });
+            console.log(toto);
       return toto;
-  }
+*/  }
 
    /**
    * Handle Http operation that failed.
