@@ -1,40 +1,87 @@
 <main class="bd-main">
+
     <div class="bd-side-background"></div>
-     <div class="bd-main-container container">
-        <div class="bd-duo level ">
-          <div class="bd-lead level-left">
+    <div class="tile is-ancestor ">
+        <aside class="menu">
+            <ul class="menu-list" >
+                <li>
+                  <a (click)="ALLdata()" class="is-active">Toutes les données</a>
+                </li>
+            </ul>
 
-              mlkmlkmlk
+            <ul class="menu-list" *ngFor="let categorie of categories">
+                <li>
+                  <a (click)="onTarget(categorie.motcles)">{{categorie.name}}</a>
+                  <ul>
+                    <li id="" *ngFor="let souscategorie of categorie.sousCategories" 
+                    (click)="onSelect( souscategorie.motcles)">
+                        <a>{{souscategorie.name}}</a>
+                    </li>
+                  </ul>
+                </li>
+            </ul>
+        </aside>
+        
+        <div class="tile is-vertical is-10" >
+            <div class="tile is-parent">
+                <table class="table" *ngIf="All">
+                    <thead>
+                        <tr>
+                          <th>Nom de la catégorie</th>
+                          <th><abbr title="NbArticle">Nombre d'article</abbr></th>
+                          <th><abbr title="In">Indice de confiance</abbr></th>
+                         </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let categorie of categories">
+                            <th><strong>{{categorie.name}}</strong></th>
+                            <td>{{categorie.nbArticle}}</td>
+                            <th>{{categorie.indiceConfiance}}</th>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table" *ngIf="listMotCle">
+                    <thead>
+                        <tr>
+                          <th><abbr title="Position">Position</abbr></th>
+                          <th>Nom de la catégorie</th>
+                          <th><abbr title="NbArticle">Nombre d'article</abbr></th>
+                          <th><abbr title="In">Indice de confiance</abbr></th>
+                          <th><abbr title="Drawn"></abbr></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let motcle of listMotCle">
+                            <th>{{motcle.id}}</th>
+                            <td><strong>{{motcle.name}}</strong></td>
+                            <th>{{motcle.nbArticle}}</th>
+                            <td>{{motcle.score}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table" *ngIf="selectedCat">
+                    <thead>
+                        <tr>
+                          <th><abbr title="Position">Position</abbr></th>
+                          <th>Nom de la catégorie</th>
+                          <th><abbr title="NbArticle">Nombre d'article</abbr></th>
+                          <th><abbr title="In">Indice de confiance</abbr></th>
+                          <th><abbr title="Drawn"></abbr></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr *ngFor="let souscat of selectedCat">
+                            <th>{{souscat.id}}</th>
+                            <td><strong>{{souscat.name}}</strong></td>
+                            <th>{{souscat.nbArticle}}</th>
+                            <td>{{souscat.score}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <aside class="bd-side level-right">
-                <nav id="categories" class="bd-categories">
-                    <div *ngFor="let categorie of categories" class="bd-category ">
-
-                        <header class="bd-category-header">
-                            <a class="bd-category-toggle">
-                                <span class="icon">
-                                </span>
-                            </a>
-                            <a class="bd-category-name " href="{{categorie.name}}">
-                              <strong>{{categorie.name}}</strong>
-                            </a>
-                        </header>
-
-                        <ul class="bd-category-list">
-                            <li *ngFor="let souscategorie of categorie.sousCategories" 
-                             (click)="onSelect(categorie.id, souscategorie)" >
-                                <a>
-                                    {{souscategorie.name}}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </aside>
-
-            
-
+                
         </div>
-
     </div>
 </main>

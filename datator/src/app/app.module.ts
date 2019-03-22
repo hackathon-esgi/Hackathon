@@ -14,6 +14,8 @@ import { HttpClientModule }    from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component';
 import { ChoixCategorieComponent } from './component/choix-categorie/choix-categorie.component';
+import { ChoixPaysComponent } from './component/choix-pays/choix-pays.component';
+
 
 @NgModule({
   declarations: [
@@ -25,8 +27,8 @@ import { ChoixCategorieComponent } from './component/choix-categorie/choix-categ
     ContactComponent,
     FooterComponent,
     HeaderComponent,
-    ChoixPaysComponent,
-    ChoixCategorieComponent
+    ChoixCategorieComponent,
+    ChoixPaysComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,6 @@ import { ChoixCategorieComponent } from './component/choix-categorie/choix-categ
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

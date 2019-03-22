@@ -1,10 +1,19 @@
-<nav class="columns">
-    <a *ngFor="let categorie of listCategorie" class="bd-focus-item column has-text-centered {{categorie.color}}" >
-      <p class="title is-4">
-        <strong>{{categorie.name}}</strong>
-      </p>
+<div class="columns is-6 is-mobile is-centered">
+  <div class="is-centered">
+  	<ng-datepicker [(ngModel)]="date"></ng-datepicker>
+  </div>
+</div>
 
+<nav class="columns">
+    <a *ngFor="let categorie of listCategorie" class="bd-focus-item column has-text-centered {{categorie.color}}" style="margin-right: 1%;margin-top: 5%;" >
        <img src="{{categorie.url}}" style="visibility: hidden;" />
-  
     </a>
  </nav>
+
+ <div class="columns is-6 is-mobile is-centered" style="margin-top: 3%;">
+  <div class="has-text-centered is-centered">
+        <div class="notification green">
+        	<a  routerLink="/categories" style="text-decoration: none;">Toutes les catégories</a>
+        </div>
+   </div>
+</div>

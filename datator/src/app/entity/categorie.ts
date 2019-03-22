@@ -1,4 +1,5 @@
 import {SousCategorie} from './sousCategories';
+import {Motcle} from './motcle';
 
 export class Categorie {
   id: number;
@@ -7,4 +8,5 @@ export class Categorie {
   indiceConfiance: number;
   topic: string;
   sousCategories : SousCategorie[];
+  motcles : Motcle[];
 }
